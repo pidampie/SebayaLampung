@@ -246,3 +246,49 @@ body {
   text-decoration: none;
   font-size: 12px;
 }
+
+/* =========================
+   LAMPUNG THEME (GLOBAL)
+========================= */
+/* Orange-yellow gradient background */
+.lampung-gradient {
+  background: linear-gradient(135deg, #ffb300 0%, #ff9800 50%, #ffd54f 100%);
+}
+.lampung-border {
+  border-color: #bfa14a;
+}
+.lampung-shadow {
+  box-shadow: 0 4px 32px 0 rgba(36, 36, 36, 0.18);
+}
+.lampung-text {
+  color: #bfa14a;
+  letter-spacing: 0.04em;
+}
+.lampung-btn {
+  background: #ff9800;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px 0 rgba(36,36,36,0.10);
+  border: 1.5px solid #ff9800;
+  transition: background 0.2s, border 0.2s, color 0.2s;
+}
+.lampung-btn:hover {
+  background: #ffeb3b;
+  color: #7c1c1c;
+  border: 1.5px solid #ffb300;
+}
+.lampung-card {
+  background: #232526cc;
+  border-radius: 1rem;
+  box-shadow: 0 4px 32px 0 rgba(36, 36, 36, 0.18);
+  border: 2px solid #bfa14a;
+}
+.lampung-card-title {
+  color: #bfa14a;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.lampung-card-desc {
+  color: #e0e0e0;
+}

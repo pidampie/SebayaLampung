@@ -7,7 +7,9 @@
 </head>
 <body class="main-page">
 
+
 <?php include 'partials/header.php'; ?>
+
 
 <main class="content">
   <h1>Pilih Level Pembelajaran</h1>
