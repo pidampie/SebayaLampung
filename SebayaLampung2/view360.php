@@ -22,13 +22,59 @@
         <div class="w-full max-w-2xl lampung-card p-8 mt-4 flex flex-col items-center relative">
                 <img src="assets/img/logo.jpg" alt="Logo Sebaya Lampung" class="w-24 h-24 rounded-full border-4 lampung-border mb-4 shadow-md">
                 <!-- Aksara Lampung dekoratif -->
-                <div class="text-2xl mb-1 tracking-widest text-[#bfa14a] font-bold" style="font-family: 'Noto Sans', 'Noto Sans Lampung', serif;">ꦭꦩ꧀ꦥꦸꦁ</div>
+                <div class="text-2xl mb-1 tracking-widest text-[#bfa14a] font-bold" style="font-family: 'Noto Sans', 'Noto Sans Lampung', serif;">ꤶꥍꤷꥒꤸꥍꤺ</div>
                 <h2 class="text-3xl lampung-card-title mb-2 tracking-wide font-extrabold">Jelajahi Lampung 360°</h2>
                 <p class="lampung-card-desc mb-6 text-center text-base">Lihat keindahan Lampung secara virtual melalui Google Street View di bawah ini.<br><span class="text-[#bfa14a] font-semibold">Tapis, Siger, dan Aksara Lampung</span> menjadi inspirasi desain.</p>
-                <!-- Ganti src di bawah dengan link embed Google Street View yang diinginkan -->
-                <div class="w-full flex justify-center">
-                    <iframe class="w-full h-96 rounded-xl border-2 lampung-border shadow-lg" src="https://www.google.com/maps/embed?pb=!4v1711530000000!6m8!1m7!1stGD2tZBuZ-FAVFEvtfzlaQ!2m2!1d-5.767622!2d105.690926!3f75!4f0!5f0.7820865974627469" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                                <!-- Slider View 360 -->
+                                <div class="w-full flex flex-col items-center">
+                                        <div class="w-full flex justify-center mb-4">
+                                                <button id="prev360" class="lampung-btn px-4 py-1 mx-2">&#8592; Sebelumnya</button>
+                                                <span id="view360-title" class="text-lg font-bold text-[#bfa14a] mx-2"></span>
+                                                <button id="next360" class="lampung-btn px-4 py-1 mx-2">Berikutnya &#8594;</button>
+                                        </div>
+                                        <iframe id="view360-iframe" class="w-full h-96 rounded-xl border-2 lampung-border shadow-lg" src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <script src="assets/js/app.js"></script>
+                                <script>
+                                // Daftar lokasi 360
+                                const view360Data = [
+                                    {
+                                        title: "Monumen Krakatau",
+                                        src: "https://www.google.com/maps/embed?pb=!4v1774595226792!6m8!1m7!1s_UjqOx844YpiWyJi_ieLzg!2m2!1d-5.445573764978793!2d105.2621430211276!3f341.16579632669493!4f5.234620030153707!5f0.4000000000000002"
+                                    },
+                                    {
+                                        title: "Menara Siger Lampung",
+                                        src: "https://www.google.com/maps/embed?pb=!4v1774594908121!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRDhzOEhzS0E.!2m2!1d-5.865500669479609!2d105.7497281776054!3f331.935757338619!4f-14.084544309907926!5f0.7820865974627469"
+                                    },
+                                    {
+                                        title: "Danau Ranau",
+                                        src: "https://www.google.com/maps/embed?pb=!4v1774594807085!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFUtTUdyREE.!2m2!1d-4.851027128549077!2d103.9376020799148!3f233.14602056529284!4f-5.265547329917069!5f0.7820865974627469"
+                                    },
+                                    {
+                                        title: "Way Kambas",
+                                        src: "https://www.google.com/maps/embed?pb=!4v1711530000000!6m8!1m7!1sCAoSLEFGMVFpcE1kQ2Z6b2Z2b2Z2b2Z2b2Z2b2Z2b2Z2b2Z2b2Z2b2Z2b2Z2!2m2!1d-5.055!2d105.633!3f0!4f0!5f0.7820865974627469"
+                                    },
+                                    {
+                                        title: "Museum Lampung",
+                                        src: "https://www.google.com/maps/embed?pb=!4v1774594669990!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0U2TnFiZFE.!2m2!1d-5.37258436701421!2d105.2406767765532!3f188.2650633364942!4f-9.232964151733114!5f0.7820865974627469"
+                                    }
+                                ];
+                                let current360 = 0;
+                                function updateView360() {
+                                    document.getElementById('view360-iframe').src = view360Data[current360].src;
+                                    document.getElementById('view360-title').textContent = view360Data[current360].title;
+                                }
+                                document.getElementById('prev360').onclick = function() {
+                                    current360 = (current360 - 1 + view360Data.length) % view360Data.length;
+                                    updateView360();
+                                };
+                                document.getElementById('next360').onclick = function() {
+                                    current360 = (current360 + 1) % view360Data.length;
+                                    updateView360();
+                                };
+                                // Inisialisasi pertama
+                                updateView360();
+                                </script>
                 <a href="dashboard.php" class="mt-8 lampung-btn px-6 py-2 text-lg">Kembali ke Dashboard</a>
         </div>
         <!-- Ornamen tapis Lampung bawah -->
